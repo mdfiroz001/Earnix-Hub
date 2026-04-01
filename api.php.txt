@@ -1,0 +1,63 @@
+<?php
+// api.php - InfinityFree htdocs ফোল্ডারে থাকবে
+error_reporting(0); // এরর মেসেজ হাইড করে রাখা নিরাপদ
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Content-Type: application/json");
+
+// ডাটাবেজ তথ্য (আপনার স্ক্রিনশট অনুযায়ী পূরণ করা)
+$db_host = "sql110.infinityfree.com";
+$db_user = "if0_41160102";
+$db_pass = "Hyxs767G7RhhC"; // আপনার একাউন্ট পাসওয়ার্ড
+$db_name = "if0_41160102_dbhfigh";
+
+$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
+
+if ($conn->connect_error) {
+    echo json_encode(["error" => "Database Connection Failed"]);
+    exit();
+}
+
+$SECRET_KEY = "orange_secure_key_2026"; // db.js এর সাথে মিল থাকতে হবে
+
+//Authorization চেক
+$headers = getallheaders();
+$auth = isset($headers['Authorization']) ? $headers['Authorization'] : (isset($headers['authorization']) ? $headers['authorization'] : '');
+
+if ($auth !== "Bearer $SECRET_KEY") {
+    echo json_encode(["error" => "Unauthorized access"]);
+    exit();
+}
+
+// ইনপুট ডেটা গ্রহণ
+$input = json_decode(file_get_contents('php://input'), true);
+if (!$input || !isset($input['query'])) {
+    echo json_encode(["error" => "Invalid Request"]);
+    exit();
+}
+
+$query = $input['query'];
+$params = $input['params'] ?? [];
+
+$stmt = $conn->prepare($query);
+if ($params) {
+    $types = str_repeat('s', count($params)); 
+    $stmt->bind_param($types, ...$params);
+}
+
+if ($stmt->execute()) {
+    $result = $stmt->get_result();
+    if ($result) {
+        $data = $result->fetch_all(MYSQLI_ASSOC);
+        echo json_encode(["data" => $data]);
+    } else {
+        echo json_encode(["success" => true]);
+    }
+} else {
+    echo json_encode(["error" => $stmt->error]);
+}
+
+$conn->close();
+?>
