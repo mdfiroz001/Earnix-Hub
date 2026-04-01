@@ -2,2486 +2,646 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Earniverse Pro ✦</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>orange 🍊</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
-            --font-primary: 'Inter', sans-serif;
-            
-            /* Premium Color Palette */
-            --primary-50: #f5f3ff;
-            --primary-100: #ede9fe;
-            --primary-200: #ddd6fe;
-            --primary-300: #c4b5fd;
-            --primary-400: #a78bfa;
-            --primary-500: #8b5cf6;
-            --primary-600: #7c3aed;
-            --primary-700: #6d28d9;
-            --primary-800: #5b21b6;
-            --primary-900: #4c1d95;
-            
-            /* Gradient Pairs */
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            --gradient-6: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
-            
-            /* Cards Colors */
-            --stat-purple: linear-gradient(135deg, #8b5cf6, #6366f1);
-            --stat-pink: linear-gradient(135deg, #ec4899, #f43f5e);
-            --stat-green: linear-gradient(135deg, #10b981, #14b8a6);
-            --stat-orange: linear-gradient(135deg, #f97316, #ef4444);
-            --stat-blue: linear-gradient(135deg, #3b82f6, #2dd4bf);
-            --stat-indigo: linear-gradient(135deg, #6366f1, #a855f7);
-            
-            /* Theme Colors */
-            --bg-light: #f8fafc;
-            --surface-light: #ffffff;
-            --text-light: #0f172a;
-            --text-soft-light: #475569;
-            --border-light: #e2e8f0;
-            
-            --bg-dark: #0b1120;
-            --surface-dark: #1a2639;
-            --text-dark: #f1f5f9;
-            --text-soft-dark: #94a3b8;
-            --border-dark: #334155;
-            
-            /* Shadows */
-            --shadow-xs: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-            --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
-            --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.3);
-            
-            /* Border Radius */
-            --radius-xs: 8px;
-            --radius-sm: 12px;
-            --radius-md: 16px;
-            --radius-lg: 20px;
-            --radius-xl: 24px;
-            --radius-2xl: 28px;
-            --radius-3xl: 32px;
-            --radius-full: 9999px;
-            
-            /* Transitions */
-            --transition-fast: 150ms ease;
-            --transition-base: 250ms ease;
-            --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            --font-family: 'Poppins', sans-serif;
+            --primary-color: #E74C3C; --secondary-color: #F39C12;
+            --background-light: #FDFEFE; --surface-light: #FFFFFF; --text-primary-light: #2C3E50; --text-secondary-light: #808B96; --border-light: #EAEDED;
+            --background-dark: #1B2631; --surface-dark: #283747; --text-primary-dark: #FDFEFE; --text-secondary-dark: #ABB2B9; --border-dark: #566573;
+            --success: #27AE60; --danger: #C0392B; --pending: #F39C12;
         }
-
-        /* Base Styles */
-        body {
-            font-family: var(--font-primary);
-            background: var(--bg-light);
-            color: var(--text-light);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        body.dark-theme {
-            background: var(--bg-dark);
-            color: var(--text-dark);
-        }
-
-        #app {
-            max-width: 480px;
-            margin: 0 auto;
-            padding: 20px 20px 90px;
-            position: relative;
-        }
-
-        /* Animations */
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.5); }
-            50% { box-shadow: 0 0 20px 5px rgba(139, 92, 246, 0.5); }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -1000px 0; }
-            100% { background-position: 1000px 0; }
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* Loader */
-        #app-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-900), var(--primary-700), var(--primary-500));
-            background-size: 300% 300%;
-            animation: shimmer 3s linear infinite;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            gap: 24px;
-        }
-
-        .loader-logo {
-            width: 120px;
-            height: 120px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 4px solid rgba(255, 255, 255, 0.2);
-            animation: float 3s ease infinite;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .loader-logo i {
-            font-size: 60px;
-            color: white;
-            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
-        }
-
-        #loading-progress {
-            color: white;
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            animation: pulseGlow 2s ease infinite;
-        }
-
-        .loader-text {
-            color: white;
-            font-size: 1rem;
-            font-weight: 500;
-            opacity: 0.9;
-            letter-spacing: 0.5px;
-        }
-
-        /* Pages */
-        .page {
-            display: none;
-            animation: slideUp 0.5s ease;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-family); transition: background-color 0.3s, color 0.3s; -webkit-font-smoothing: antialiased; }
+        body.light-theme { background-color: var(--background-light); color: var(--text-primary-light); }
+        body.dark-theme { background-color: var(--background-dark); color: var(--text-primary-dark); }
+        #app { max-width: 500px; margin: 0 auto; padding-bottom: 80px; }
+        .page { display: none; padding: 15px; }
+        .page.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
         
-        .page.active {
-            display: block;
+        .profile-header {
+            padding: 25px 15px; border-bottom: 1px solid;
+            display: flex; flex-direction: column; align-items: center; text-align: center;
         }
+        .light-theme .profile-header { background-color: var(--surface-light); border-bottom-color: var(--border-light); }
+        .dark-theme .profile-header { background-color: var(--surface-dark); border-bottom-color: var(--border-dark); }
+        #user-photo { width: 80px; height: 80px; border-radius: 50%; border: 4px solid var(--primary-color); object-fit: cover; margin-bottom: 10px; }
+        #user-name { font-size: 1.4rem; font-weight: 700; margin-bottom: 5px; }
+        #user-balance-container { font-size: 1rem; font-weight: 500; }
+        #user-balance { font-size: 1.1rem; font-weight: 700; color: var(--primary-color); }
 
-        /* Profile Banner */
-        .profile-banner {
-            background: linear-gradient(135deg, var(--primary-600), var(--primary-700), var(--primary-800));
-            border-radius: var(--radius-3xl);
-            padding: 28px 24px;
-            margin-bottom: 28px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-            transform: translateY(0);
-            transition: all var(--transition-base);
-        }
-
-        .profile-banner:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 30px 40px -15px rgba(124, 58, 237, 0.4);
-        }
-
-        .profile-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 6s ease infinite;
-        }
-
-        .profile-banner::after {
-            content: '';
-            position: absolute;
-            bottom: -60%;
-            left: -20%;
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease infinite reverse;
-        }
-
-        .banner-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        #user-photo {
-            width: 90px;
-            height: 90px;
-            border-radius: 30px;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            object-fit: cover;
-            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
-            transition: all var(--transition-bounce);
-            animation: float 5s ease infinite;
-        }
-
-        #user-photo:hover {
-            transform: scale(1.05) rotate(3deg);
-            border-color: white;
-        }
-
-        .banner-info h1 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            color: white;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            letter-spacing: -0.02em;
-        }
-
-        .balance-chip {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(12px);
-            padding: 12px 24px;
-            border-radius: var(--radius-full);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: all var(--transition-base);
-            cursor: pointer;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .balance-chip:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
-            border-color: white;
-        }
-
-        .balance-chip:active {
-            transform: scale(0.95);
-        }
-
-        .balance-chip i {
-            font-size: 1.2rem;
-            animation: pulseGlow 2s ease infinite;
-        }
-
-        /* Stats Grid - Colorful Cards */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-bottom: 28px;
-        }
-
-        .stat-item {
-            border-radius: var(--radius-xl);
-            padding: 24px 20px;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-bounce);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            color: white;
-            min-height: 130px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity var(--transition-base);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-xl), var(--shadow-glow);
-        }
-
-        .stat-item:hover::before {
-            opacity: 1;
-        }
-
-        .stat-item:active {
-            transform: scale(0.98);
-        }
-
-        /* Different gradient for each stat */
-        .stat-item:nth-child(1) { background: var(--stat-purple); }
-        .stat-item:nth-child(2) { background: var(--stat-pink); }
-        .stat-item:nth-child(3) { background: var(--stat-green); }
-        .stat-item:nth-child(4) { background: var(--stat-orange); }
-
-        .stat-item h4 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            opacity: 0.9;
-            position: relative;
-            z-index: 2;
-        }
-
-        .stat-value {
-            font-size: 2.2rem;
-            font-weight: 800;
-            line-height: 1;
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Floating Icons */
-        .stat-item::after {
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            right: 15px;
-            bottom: 15px;
-            font-size: 3.5rem;
-            color: rgba(255, 255, 255, 0.15);
-            animation: float 4s ease infinite;
-            z-index: 1;
-        }
-
-        .stat-item:nth-child(1)::after { content: '\f073'; } /* calendar */
-        .stat-item:nth-child(2)::after { content: '\f0c0'; } /* users */
-        .stat-item:nth-child(3)::after { content: '\f06e'; } /* eye */
-        .stat-item:nth-child(4)::after { content: '\f4b8'; } /* coin */
-
-        /* Section Headers */
-        .section-head {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 32px 0 20px;
-            position: relative;
-        }
-
-        .section-head i {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-1);
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-bounce);
-        }
-
-        .section-head:hover i {
-            transform: rotate(360deg) scale(1.1);
-        }
-
-        .section-head h2 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-600), var(--primary-800));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.02em;
-        }
-
-        .section-head span {
-            margin-left: auto;
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 6px 16px;
-            background: linear-gradient(135deg, var(--primary-50), var(--primary-100));
-            color: var(--primary-700);
-            border-radius: var(--radius-full);
-            transition: all var(--transition-base);
-        }
-
-        .dark-theme .section-head span {
-            background: linear-gradient(135deg, var(--primary-900), var(--primary-800));
-            color: var(--primary-200);
-        }
-
-        .section-head span:hover {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Vault Card */
-        .vault-card {
-            background: linear-gradient(135deg, #1a2639, #0f172a);
-            border-radius: var(--radius-3xl);
-            padding: 32px 28px;
-            margin-bottom: 28px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-            transition: all var(--transition-base);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .vault-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 40px -15px rgba(0, 0, 0, 0.5);
-        }
-
-        .vault-card::before {
-            content: '';
-            position: absolute;
-            top: -30%;
-            right: -10%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 7s ease infinite;
-        }
-
-        .vault-card::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 9s ease infinite reverse;
-        }
-
-        .vault-title {
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0.7;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .vault-amount {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            animation: float 5s ease infinite;
-        }
-
-        .vault-note {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .vault-btn {
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600), var(--primary-700));
-            border: none;
-            color: white;
-            padding: 18px 28px;
-            border-radius: var(--radius-full);
-            font-weight: 700;
-            font-size: 1rem;
-            width: 100%;
-            cursor: pointer;
-            transition: all var(--transition-bounce);
-            box-shadow: 0 15px 25px -8px rgba(139, 92, 246, 0.4);
-            position: relative;
-            z-index: 2;
-            overflow: hidden;
-        }
-
-        .vault-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .vault-btn:hover::before {
-            left: 100%;
-        }
-
-        .vault-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 20px 30px -8px rgba(139, 92, 246, 0.6);
-        }
-
-        .vault-btn:active {
-            transform: scale(0.98);
-        }
-
-        .vault-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        /* Progress Card */
-        .progress-card {
-            background: var(--surface-light);
-            border-radius: var(--radius-2xl);
-            padding: 24px;
-            margin-bottom: 28px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-light);
-            transition: all var(--transition-base);
-        }
-
-        .dark-theme .progress-card {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        .progress-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 16px;
-            font-weight: 600;
-            color: var(--text-light);
-        }
-
-        .dark-theme .progress-header {
-            color: var(--text-dark);
-        }
-
-        .progress-bg {
-            height: 16px;
-            background: var(--border-light);
-            border-radius: var(--radius-full);
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-500), var(--primary-600), var(--primary-700));
-            background-size: 200% 200%;
-            animation: shimmer 2s linear infinite;
-            border-radius: var(--radius-full);
-            transition: width 0.5s ease;
-        }
-
-        /* Task Master Card */
-        .task-master-card {
-            background: var(--surface-light);
-            border-radius: var(--radius-3xl);
-            padding: 28px;
-            margin-bottom: 28px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-light);
-            transition: all var(--transition-base);
-        }
-
-        .dark-theme .task-master-card {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        .task-master-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .master-header {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            margin-bottom: 28px;
-            padding-bottom: 20px;
-            border-bottom: 2px dashed var(--border-light);
-        }
-
-        .dark-theme .master-header {
-            border-bottom-color: var(--border-dark);
-        }
-
-        .master-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600), var(--primary-700));
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.2rem;
-            animation: float 5s ease infinite;
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-bounce);
-        }
-
-        .master-icon:hover {
-            transform: rotate(10deg) scale(1.1);
-        }
-
-        .master-header h3 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
-        }
-
-        .master-header p {
-            color: var(--text-soft-light);
-            font-size: 0.9rem;
-        }
-
-        .dark-theme .master-header p {
-            color: var(--text-soft-dark);
-        }
-
-        /* Double Task Boxes - Colorful */
-        .task-double-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            margin-top: 20px;
-        }
-
-        .task-action-box {
-            border-radius: 28px;
-            padding: 28px 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all var(--transition-bounce);
-            position: relative;
-            overflow: hidden;
-            color: white;
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Different gradients for each box */
-        .task-action-box:first-child {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-        }
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .stat-card { padding: 15px; border-radius: 12px; text-align: center; border: 1px solid; }
+        .light-theme .stat-card { background-color: var(--surface-light); border-color: var(--border-light); }
+        .dark-theme .stat-card { background-color: var(--surface-dark); border-color: var(--border-dark); }
+        .stat-card h3 { font-size: 0.85rem; font-weight: 500; margin-bottom: 8px; text-transform: uppercase; }
+        .light-theme .stat-card h3 { color: var(--text-secondary-light); } .dark-theme .stat-card h3 { color: var(--text-secondary-dark); }
+        .stat-card p { font-size: 1.4rem; font-weight: 600; color: var(--primary-color); }
         
-        .task-action-box:last-child {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-        }
-
-        .task-action-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity var(--transition-base);
-        }
-
-        .task-action-box:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-xl), 0 0 30px rgba(139, 92, 246, 0.4);
-        }
-
-        .task-action-box:hover::before {
-            opacity: 1;
-        }
-
-        .task-action-box:active {
-            transform: scale(0.98);
-        }
-
-        .box-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 2.5rem;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            transition: all var(--transition-bounce);
-            animation: float 4s ease infinite;
-        }
-
-        .task-action-box:hover .box-icon {
-            transform: scale(1.1) rotate(5deg);
-            border-color: white;
-        }
-
-        .task-action-box h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: white;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .task-action-box p {
-            font-size: 0.9rem;
-            margin-bottom: 16px;
-            opacity: 0.9;
-        }
-
-        .box-badge {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 8px 20px;
-            border-radius: var(--radius-full);
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            animation: pulseGlow 2s ease infinite;
-            transition: all var(--transition-base);
-        }
-
-        .box-badge:hover {
-            transform: scale(1.1);
-            background: rgba(255, 255, 255, 0.35);
-            border-color: white;
-        }
-
-        /* Bonus Tasks Wrapper */
-        .bonus-tasks-wrapper {
-            margin-top: 28px;
-            padding-top: 20px;
-            border-top: 2px dashed var(--border-light);
-            animation: slideUp 0.5s ease;
-        }
-
-        .dark-theme .bonus-tasks-wrapper {
-            border-top-color: var(--border-dark);
-        }
-
-        /* Bonus Task Cards - Colorful */
-        .bonus-task-card {
-            background: var(--surface-light);
-            border-radius: 24px;
-            padding: 20px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-light);
-            transition: all var(--transition-bounce);
-            cursor: pointer;
-            animation: slideInRight 0.5s ease;
-            animation-fill-mode: both;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .bonus-task-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
-            transition: width var(--transition-base);
-        }
-
-        .bonus-task-card:nth-child(1) { animation-delay: 0.1s; }
-        .bonus-task-card:nth-child(2) { animation-delay: 0.15s; }
-        .bonus-task-card:nth-child(3) { animation-delay: 0.2s; }
-        .bonus-task-card:nth-child(4) { animation-delay: 0.25s; }
-        .bonus-task-card:nth-child(5) { animation-delay: 0.3s; }
-
-        .dark-theme .bonus-task-card {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        .bonus-task-card:hover {
-            transform: translateX(8px) scale(1.02);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary-500);
-        }
-
-        .bonus-task-card:hover::before {
-            width: 8px;
-        }
-
-        .bonus-icon {
-            width: 65px;
-            height: 65px;
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600), var(--primary-700));
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-bounce);
-            animation: float 5s ease infinite;
-        }
-
-        .bonus-task-card:hover .bonus-icon {
-            transform: rotate(360deg) scale(1.1);
-        }
-
-        .bonus-info {
-            flex: 1;
-        }
-
-        .bonus-info h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: var(--text-light);
-        }
-
-        .dark-theme .bonus-info h4 {
-            color: var(--text-dark);
-        }
-
-        .bonus-info p {
-            font-size: 0.9rem;
-            color: var(--text-soft-light);
-        }
-
-        .dark-theme .bonus-info p {
-            color: var(--text-soft-dark);
-        }
-
-        .bonus-btn {
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
-            color: white;
-            border: none;
-            padding: 14px 24px;
-            border-radius: var(--radius-full);
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all var(--transition-bounce);
-            white-space: nowrap;
-            box-shadow: 0 8px 15px rgba(139, 92, 246, 0.3);
-        }
-
-        .bonus-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 25px rgba(139, 92, 246, 0.5);
-        }
-
-        .bonus-btn:active {
-            transform: scale(0.95);
-        }
-
-        .bonus-btn:disabled {
-            background: linear-gradient(135deg, #9ca3af, #6b7280);
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        /* Chart Card */
-        .chart-card {
-            background: var(--surface-light);
-            border-radius: var(--radius-2xl);
-            padding: 24px;
-            margin: 20px 0;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-light);
-            transition: all var(--transition-base);
-        }
-
-        .dark-theme .chart-card {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        .chart-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .chart-container {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            height: 200px;
-            margin: 20px 0 15px;
-            gap: 8px;
-        }
-
-        .chart-bar {
-            width: 100%;
-            background: linear-gradient(to top, var(--primary-500), var(--primary-600), var(--primary-700));
-            border-radius: var(--radius-lg) var(--radius-lg) var(--radius-sm) var(--radius-sm);
-            position: relative;
-            cursor: pointer;
-            transition: height 0.5s ease, transform 0.3s ease;
-            animation: scaleIn 0.5s ease;
-            animation-fill-mode: both;
-            min-height: 20px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .chart-bar:nth-child(1) { animation-delay: 0.1s; }
-        .chart-bar:nth-child(2) { animation-delay: 0.15s; }
-        .chart-bar:nth-child(3) { animation-delay: 0.2s; }
-        .chart-bar:nth-child(4) { animation-delay: 0.25s; }
-        .chart-bar:nth-child(5) { animation-delay: 0.3s; }
-        .chart-bar:nth-child(6) { animation-delay: 0.35s; }
-        .chart-bar:nth-child(7) { animation-delay: 0.4s; }
-
-        .chart-bar:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .chart-bar .tooltip {
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary-600);
-            color: white;
-            padding: 8px 16px;
-            border-radius: var(--radius-lg);
-            font-size: 0.8rem;
-            font-weight: 600;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            white-space: nowrap;
-            box-shadow: var(--shadow-lg);
-            border: 2px solid white;
-        }
-
-        .chart-bar:hover .tooltip {
-            opacity: 1;
-            animation: float 2s ease infinite;
-        }
-
-        .chart-labels {
-            display: flex;
-            justify-content: space-between;
-            padding: 0 8px;
-            color: var(--text-soft-light);
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .dark-theme .chart-labels {
-            color: var(--text-soft-dark);
-        }
-
-        /* Leaderboard */
-        .toggle-switch {
-            display: flex;
-            gap: 12px;
-            background: var(--border-light);
-            padding: 6px;
-            border-radius: var(--radius-full);
-            margin-bottom: 28px;
-        }
-
-        .dark-theme .toggle-switch {
-            background: var(--border-dark);
-        }
-
-        .toggle-option {
-            flex: 1;
-            padding: 16px;
-            border: none;
-            border-radius: var(--radius-full);
-            font-weight: 600;
-            background: transparent;
-            cursor: pointer;
-            transition: all var(--transition-bounce);
-            font-size: 0.95rem;
-            color: var(--text-light);
-        }
-
-        .dark-theme .toggle-option {
-            color: var(--text-dark);
-        }
-
-        .toggle-option.active {
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
-            color: white;
-            box-shadow: var(--shadow-lg), var(--shadow-glow);
-            transform: scale(1.02);
-        }
-
-        .toggle-option:active {
-            transform: scale(0.98);
-        }
-
-        /* Rank Cards */
-        .rank-card {
-            background: var(--surface-light);
-            border-radius: 24px;
-            padding: 18px;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            border: 1px solid var(--border-light);
-            transition: all var(--transition-bounce);
-            cursor: pointer;
-            animation: slideInRight 0.5s ease;
-            animation-fill-mode: both;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .rank-card:nth-child(1) { animation-delay: 0.1s; }
-        .rank-card:nth-child(2) { animation-delay: 0.15s; }
-        .rank-card:nth-child(3) { animation-delay: 0.2s; }
-        .rank-card:nth-child(4) { animation-delay: 0.25s; }
-        .rank-card:nth-child(5) { animation-delay: 0.3s; }
-
-        .dark-theme .rank-card {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        .rank-card:hover {
-            transform: translateX(8px) scale(1.02);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-500);
-        }
-
-        .rank-number {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            width: 50px;
-            text-align: center;
-            animation: pulseGlow 2s ease infinite;
-        }
-
-        .rank-avatar {
-            width: 55px;
-            height: 55px;
-            border-radius: 20px;
-            object-fit: cover;
-            border: 3px solid transparent;
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
-            padding: 2px;
-            transition: all var(--transition-bounce);
-        }
-
-        .rank-card:hover .rank-avatar {
-            transform: rotate(5deg) scale(1.1);
-        }
-
-        .rank-info {
-            flex: 1;
-        }
-
-        .rank-name {
-            font-weight: 700;
-            margin-bottom: 4px;
-            color: var(--text-light);
-        }
-
-        .dark-theme .rank-name {
-            color: var(--text-dark);
-        }
-
-        .rank-score {
-            font-size: 0.9rem;
-            color: var(--primary-600);
-            font-weight: 600;
-        }
-
-        /* History Cards */
-        .history-card {
-            background: var(--surface-light);
-            border-radius: 24px;
-            padding: 20px;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border: 1px solid var(--border-light);
-            transition: all var(--transition-bounce);
-            cursor: pointer;
-            animation: slideUp 0.5s ease;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .dark-theme .history-card {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        .history-card:hover {
-            transform: translateX(8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-500);
-        }
-
-        .history-badge {
-            padding: 8px 18px;
-            border-radius: var(--radius-full);
-            color: white;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: all var(--transition-base);
-            text-transform: capitalize;
-        }
-
-        .badge-completed { background: linear-gradient(135deg, #10b981, #059669); }
-        .badge-pending { background: linear-gradient(135deg, #f59e0b, #d97706); }
-        .badge-rejected { background: linear-gradient(135deg, #ef4444, #dc2626); }
-
-        /* Referral Section */
-        .referral-box {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
-            border: 2px dashed var(--primary-500);
-            border-radius: var(--radius-2xl);
-            padding: 28px;
-            text-align: center;
-        }
-
-        .referral-link {
-            background: var(--surface-light);
-            padding: 18px;
-            border-radius: var(--radius-full);
-            margin: 20px 0;
-            word-break: break-all;
-            border: 1px solid var(--border-light);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .dark-theme .referral-link {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        /* Form Elements */
-        .glass-form {
-            background: var(--surface-light);
-            border-radius: var(--radius-2xl);
-            padding: 28px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-light);
-        }
-
-        .dark-theme .glass-form {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 18px;
-            border: 2px solid var(--border-light);
-            border-radius: var(--radius-xl);
-            margin-bottom: 18px;
-            font-size: 1rem;
-            transition: all var(--transition-base);
-            background: var(--surface-light);
-            color: var(--text-light);
-        }
-
-        .dark-theme .form-input {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-            color: var(--text-dark);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary-500);
-            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
-        }
-
-        select.form-input {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            background-size: 20px;
-        }
-
-        /* Link Cards */
-        .link-card {
-            background: var(--surface-light);
-            border-radius: 24px;
-            padding: 18px;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            border: 1px solid var(--border-light);
-            transition: all var(--transition-bounce);
-            cursor: pointer;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .dark-theme .link-card {
-            background: var(--surface-dark);
-            border-color: var(--border-dark);
-        }
-
-        .link-card:hover {
-            transform: translateX(8px) scale(1.02);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-500);
-        }
-
-        .link-icon {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.6rem;
-            animation: float 4s ease infinite;
-        }
-
-        /* Bottom Navigation - Glassmorphism */
-        .bottom-nav-unique {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            max-width: 480px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            display: flex;
-            justify-content: space-around;
-            padding: 12px 16px 24px;
-            border-radius: 40px 40px 0 0;
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .dark-theme .bottom-nav-unique {
-            background: rgba(26, 35, 57, 0.9);
-            border-top-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-item {
-            background: none;
-            border: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.8rem;
-            color: var(--text-soft-light);
-            cursor: pointer;
-            transition: all var(--transition-bounce);
-            flex: 1;
-            padding: 8px 0;
-        }
-
-        .nav-item i {
-            font-size: 1.8rem;
-            width: 55px;
-            height: 55px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 30px;
-            transition: all var(--transition-bounce);
-            color: var(--text-soft-light);
-        }
-
-        .nav-item span {
-            font-weight: 500;
-            transition: all var(--transition-base);
-        }
-
-        .nav-item.active {
-            color: var(--primary-600);
-        }
-
-        .nav-item.active i {
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
-            color: white;
-            transform: translateY(-8px) scale(1.1);
-            box-shadow: 0 15px 25px rgba(139, 92, 246, 0.4);
-        }
-
-        .nav-item:hover i {
-            transform: scale(1.1);
-            color: var(--primary-500);
-        }
-
-        .nav-item:active {
-            transform: scale(0.95);
-        }
-
-        /* Popup */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-        }
-
-        .popup-card {
-            background: var(--surface-light);
-            padding: 40px;
-            border-radius: 50px;
-            text-align: center;
-            max-width: 340px;
-            animation: scaleIn 0.5s ease;
-            box-shadow: var(--shadow-xl);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .dark-theme .popup-card {
-            background: var(--surface-dark);
-        }
-
-        .popup-btn {
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
-            color: white;
-            border: none;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-weight: 700;
-            margin-top: 25px;
-            cursor: pointer;
-            transition: all var(--transition-bounce);
-            width: 100%;
-            font-size: 1rem;
-            box-shadow: 0 15px 25px rgba(139, 92, 246, 0.4);
-        }
-
-        .popup-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 20px 30px rgba(139, 92, 246, 0.6);
-        }
-
-        .popup-btn:active {
-            transform: scale(0.98);
-        }
-
-        /* Utility Classes */
-        .text-gradient {
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hide {
-            display: none !important;
-        }
-
-        .show {
-            display: block !important;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 360px) {
-            #app {
-                padding: 16px 16px 80px;
-            }
-
-            .stat-value {
-                font-size: 1.8rem;
-            }
-
-            .vault-amount {
-                font-size: 2.8rem;
-            }
-
-            .box-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 2rem;
-            }
-
-            .task-action-box {
-                padding: 20px 15px;
-            }
-        }
+        .chart-container, .earning-wallet-card { padding: 20px; border-radius: 12px; margin-top: 20px; border: 1px solid; }
+        .light-theme .chart-container, .light-theme .earning-wallet-card { background-color: var(--surface-light); border-color: var(--border-light); }
+        .dark-theme .chart-container, .dark-theme .earning-wallet-card { background-color: var(--surface-dark); border-color: var(--border-dark); }
+        .chart { display: flex; justify-content: space-around; align-items: flex-end; height: 150px; border-left: 1px solid; border-bottom: 1px solid; padding-top: 10px; }
+        .light-theme .chart { border-color: var(--border-light); } .dark-theme .chart { border-color: var(--border-dark); }
+        .bar { width: 12%; background: linear-gradient(to top, var(--primary-color), var(--secondary-color)); border-radius: 5px 5px 0 0; position: relative; cursor: pointer; }
+        .bar .tooltip { position: absolute; top: -30px; left: 50%; transform: translateX(-50%); background: var(--secondary); color: white; padding: 3px 7px; border-radius: 5px; font-size: 0.8rem; white-space: nowrap; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+        .bar:hover .tooltip { opacity: 1; }
+        .chart-labels { display: flex; justify-content: space-around; font-size: 0.75rem; margin-top: 5px; }
+
+        .history-item { display: flex; justify-content: space-between; align-items: center; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        .light-theme .history-item { background-color: var(--surface-light); border: 1px solid var(--border-light); }
+        .dark-theme .history-item { background-color: var(--surface-dark); border: 1px solid var(--border-dark); }
+        .history-details p { margin: 0; } .history-details p:first-child { font-weight: 600; }
+        .history-status { padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; color: white; text-transform: capitalize; }
+        .status-completed { background-color: var(--success); } .status-pending { background-color: var(--pending); } .status-rejected { background-color: var(--danger); }
+
+        .progress-container { margin-bottom: 20px; }
+        .progress-info { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.9rem; font-weight: 500; }
+        .progress-bar-bg { width: 100%; height: 10px; border-radius: 5px; }
+        .light-theme .progress-bar-bg { background-color: var(--border-light); }
+        .dark-theme .progress-bar-bg { background-color: var(--border-dark); }
+        .progress-bar-fg { height: 100%; border-radius: 5px; background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); transition: width 0.3s ease; }
+        
+        form input, form select, form textarea { transition: all 0.2s ease-in-out; border: 1px solid; }
+        .light-theme form input, .light-theme form select { border-color: var(--border-light); }
+        .dark-theme form input, .dark-theme form select { border-color: var(--border-dark); }
+        form input:focus, form select:focus, form textarea:focus { outline: none; border-color: var(--primary-color) !important; box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2); }
+
+        .popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 10000; }
+        .popup-content { padding: 30px; border-radius: 15px; text-align: center; max-width: 80%; }
+        .light-theme .popup-content { background-color: var(--surface-light); } .dark-theme .popup-content { background-color: var(--surface-dark); }
+        .popup-content h2 { margin-bottom: 15px; color: var(--primary-color); } .popup-content p { margin-bottom: 20px; }
+        .popup-close-btn { padding: 10px 25px; border: none; border-radius: 8px; color: #fff; background-color: var(--primary-color); cursor: pointer; }
+        .popup-loader .spinner { width: 40px; height: 40px; border-radius: 50%; border: 4px solid; border-color: var(--primary-color) transparent; animation: spin 1s linear infinite; margin: 0 auto 15px;}
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        #app-loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .light-theme #app-loader { background-color: var(--background-light); } .dark-theme #app-loader { background-color: var(--background-dark); }
+        #app-loader .spinner { width: 50px; height: 50px; border-radius: 50%; border: 5px solid; border-color: var(--primary-color) transparent; animation: spin 1s linear infinite; }
+        #loading-progress { margin-top: 15px; font-size: 1.2rem; font-weight: 600; }
+        .light-theme #loading-progress { color: var(--text-primary-light); } .dark-theme #loading-progress { color: var(--text-primary-dark); }
+        
+        .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; max-width: 500px; margin: 0 auto; display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid; z-index: 1000; }
+        .light-theme .bottom-nav { background-color: var(--surface-light); border-top-color: var(--border-light); }
+        .dark-theme .bottom-nav { background-color: var(--surface-dark); border-top-color: var(--border-dark); }
+        .nav-btn { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; align-items: center; font-family: var(--font-family); font-size: 0.75rem; transition: color 0.2s; flex-grow: 1; }
+        .light-theme .nav-btn { color: var(--text-secondary-light); } .dark-theme .nav-btn { color: var(--text-secondary-dark); }
+        .nav-btn i { font-size: 1.5rem; margin-bottom: 4px; } .nav-btn.active { color: var(--primary-color); }
+        
+        .task-container { padding: 20px; border-radius: 12px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; }
+        .light-theme .task-container { background-color: var(--surface-light); border: 1px solid var(--border-light); }
+        .dark-theme .task-container { background-color: var(--surface-dark); border: 1px solid var(--border-dark); }
+        .task-icon-img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
+        .task-info h3 { font-size: 1.1rem; font-weight: 600; } .task-info p { font-size: 0.85rem; }
+        .action-btn { padding: 10px 20px; font-size: 0.9rem; font-weight: 600; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: all 0.2s; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); margin-left: auto; white-space: nowrap; }
+        .action-btn:disabled { background: #808B96; cursor: not-allowed; }
+        
+        .leaderboard-toggle { display: flex; justify-content: space-around; margin-bottom: 15px; }
+        .toggle-btn { padding: 10px 20px; border: none; background: none; font-size: 1rem; cursor: pointer; }
+        .light-theme .toggle-btn { color: var(--text-secondary-light); } .dark-theme .toggle-btn { color: var(--text-secondary-dark); }
+        .toggle-btn.active { font-weight: 700; color: var(--primary-color); border-bottom: 2px solid var(--primary-color); }
+        .leaderboard-list { list-style: none; }
+        .leaderboard-item { display: flex; align-items: center; padding: 10px; margin-bottom: 8px; border-radius: 8px; }
+        .light-theme .leaderboard-item { background-color: var(--surface-light); } .dark-theme .leaderboard-item { background-color: var(--surface-dark); }
+        .rank { font-size: 1.2rem; font-weight: 700; color: var(--primary-color); width: 40px; }
+        .leaderboard-item img { width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; object-fit: cover; }
+        .leaderboard-name { font-weight: 600; flex-grow: 1; } .leaderboard-score { font-weight: 600; color: var(--primary-color); }
     </style>
 </head>
-
 <body>
-    <!-- Loader -->
-    <div id="app-loader">
-        <div class="loader-logo">
-            <i class="fas fa-rocket"></i>
-        </div>
-        <p id="loading-progress">0%</p>
-        <p class="loader-text">Loading your experience...</p>
-    </div>
-
-    <!-- Popup -->
-    <div id="popup" class="popup-overlay">
-        <div class="popup-card">
-            <div id="popup-body"></div>
-        </div>
-    </div>
-
-    <!-- Main App -->
+    <div id="app-loader"><div class="spinner"></div><p id="loading-progress">0%</p></div>
+    <div id="popup" class="popup-overlay"><div class="popup-content"><div id="popup-body"></div></div></div>
     <div id="app" style="display: none;">
-        <!-- Profile Banner -->
-        <header class="profile-banner">
-            <div class="banner-content">
-                <img id="user-photo" src="https://via.placeholder.com/90" alt="Profile">
-                <div class="banner-info">
-                    <h1 id="user-name">Loading...</h1>
-                    <div class="balance-chip" onclick="window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('medium')">
-                        <i class="fas fa-coins"></i>
-                        <span id="user-balance">0.00</span> TK
-                    </div>
-                </div>
-            </div>
+        <header class="profile-header">
+            <img id="user-photo" src="https://via.placeholder.com/80" alt="User">
+            <h1 id="user-name">Loading...</h1>
+            <div id="user-balance-container">Main Balance: <span id="user-balance">0.00</span> TK</div>
         </header>
-
-        <!-- Main Content -->
         <main id="main-content">
-            <!-- Home Page -->
             <div id="home-page" class="page active">
-                <div class="stats-container">
-                    <div class="stat-item" onclick="window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('light')">
-                        <h4>Today's Ads</h4>
-                        <div class="stat-value" id="daily-ads-watched">0/0</div>
-                    </div>
-                    <div class="stat-item" onclick="window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('light')">
-                        <h4>Referrals</h4>
-                        <div class="stat-value" id="referral-count">0</div>
-                    </div>
-                    <div class="stat-item" onclick="window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('light')">
-                        <h4>Total Ads</h4>
-                        <div class="stat-value" id="total-ads-watched">0</div>
-                    </div>
-                    <div class="stat-item" onclick="window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('light')">
-                        <h4>Total Earned</h4>
-                        <div class="stat-value" id="total-earned">0.00</div>
-                    </div>
+                <div class="stats-grid">
+                    <div class="stat-card"><h3>Today's Ads</h3><p id="daily-ads-watched">0 / 0</p></div>
+                    <div class="stat-card"><h3>Total Referrals</h3><p id="referral-count">0</p></div>
+                    <div class="stat-card"><h3>Total Ads Watched</h3><p id="total-ads-watched">0</p></div>
+                    <div class="stat-card"><h3>Total Income</h3><p id="total-earned">0.00</p></div>
                 </div>
-
-                <div class="section-head">
-                    <i class="fas fa-chart-line"></i>
-                    <h2>Earnings Overview</h2>
-                    <span>7 days</span>
+                <div id="earnings-graph-container" class="chart-container">
+                    <h3>Last 7 Days Earnings</h3>
+                    <div id="earnings-chart" class="chart"></div><div id="earnings-chart-labels" class="chart-labels"></div>
                 </div>
-
-                <div class="chart-card">
-                    <div id="earnings-chart" class="chart-container"></div>
-                    <div id="earnings-chart-labels" class="chart-labels"></div>
-                </div>
-
-                <div class="section-head">
-                    <i class="fas fa-link"></i>
-                    <h2>Quick Access</h2>
-                </div>
-
-                <div id="dynamic-links-container"></div>
+                <div id="dynamic-links-container" style="margin-top: 20px;"></div>
             </div>
-
-            <!-- Tasks Page -->
             <div id="tasks-page" class="page">
-                <!-- Earning Vault -->
-                <div class="vault-card">
-                    <div class="vault-title">EARNING VAULT</div>
-                    <div class="vault-amount"><span id="earning-wallet-balance">0.00</span> TK</div>
-                    <div class="vault-note">Minimum 100 TK to transfer</div>
-                    <button id="move-to-balance-btn" class="vault-btn" disabled>
-                        <i class="fas fa-arrow-right" style="margin-right: 8px;"></i>Transfer to Main
-                    </button>
+                <div class="earning-wallet-card">
+                    <h3>Earning Wallet</h3>
+                    <p style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin: 10px 0;"><span id="earning-wallet-balance">0.00</span> TK</p>
+                    <small>Minimum 100 TK to move to main balance.</small>
+                    <button id="move-to-balance-btn" class="action-btn" style="width:100%; margin-top: 15px;" disabled>Move to Main Balance</button>
                 </div>
-
-                <!-- Progress -->
-                <div id="ad-progress-container" class="progress-card"></div>
-
-                <!-- Task Master Card -->
-                <div class="task-master-card">
-                    <div class="master-header">
-                        <div class="master-icon"><i class="fas fa-tasks"></i></div>
-                        <div>
-                            <h3>Earn Points</h3>
-                            <p>Choose your earning method</p>
-                        </div>
-                    </div>
-
-                    <!-- Double Task Boxes -->
-                    <div class="task-double-grid">
-                        <!-- Box 1: Watch Ad Task -->
-                        <div id="ad-task-container" class="task-action-box"></div>
-                        
-                        <!-- Box 2: Work Videos -->
-                        <div class="task-action-box" id="work-videos-box">
-                            <div class="box-icon"><i class="fas fa-play-circle"></i></div>
-                            <h4>Work Videos</h4>
-                            <p>Complete & earn bonus</p>
-                            <span class="box-badge">View Tasks</span>
-                        </div>
-                    </div>
-
-                    <!-- Bonus Tasks Wrapper -->
-                    <div id="bonus-tasks-wrapper" class="bonus-tasks-wrapper" style="display: none;">
-                        <div class="section-head" style="margin-top: 10px;">
-                            <i class="fas fa-gift"></i>
-                            <h3>Available Tasks</h3>
-                        </div>
-                        <div id="dynamic-tasks-container"></div>
-                    </div>
-                </div>
+                <div id="ad-progress-container" class="progress-container" style="margin-top:20px;"></div>
+                <div id="ad-task-container"></div>
+                <h2>Bonus Tasks</h2><div id="dynamic-tasks-container"></div>
             </div>
-
-            <!-- Leaderboard Page -->
             <div id="leaderboard-page" class="page">
-                <div class="section-head">
-                    <i class="fas fa-trophy"></i>
-                    <h2>Leaderboard</h2>
+                <h2>Leaderboard</h2>
+                <div class="leaderboard-toggle">
+                    <button class="toggle-btn active" data-board="referral">Top Referrers</button>
+                    <button class="toggle-btn" data-board="earning">Top Earners</button>
                 </div>
-
-                <div class="toggle-switch">
-                    <button class="toggle-option active" data-board="referral">Top Referrers</button>
-                    <button class="toggle-option" data-board="earning">Top Earners</button>
-                </div>
-
-                <div id="referral-board">
-                    <div id="referral-leaderboard-list"></div>
-                </div>
-
-                <div id="earning-board" style="display: none;">
-                    <div id="earning-leaderboard-list"></div>
-                </div>
+                <div id="referral-board"><ul class="leaderboard-list" id="referral-leaderboard-list"></ul></div>
+                <div id="earning-board" style="display: none;"><ul class="leaderboard-list" id="earning-leaderboard-list"></ul></div>
             </div>
-
-            <!-- Profile Page -->
             <div id="profile-page" class="page">
-                <div class="section-head">
-                    <i class="fas fa-user-group"></i>
-                    <h2>Referral Program</h2>
+                <div id="referral-section"></div><div id="withdraw-section"></div>
+                <div id="withdrawal-history-section" style="margin-top: 20px;">
+                    <h2>Withdrawal History</h2><div id="withdrawal-history-list"></div>
                 </div>
-                <div id="referral-section"></div>
-
-                <div class="section-head">
-                    <i class="fas fa-credit-card"></i>
-                    <h2>Withdraw Earnings</h2>
-                </div>
-                <div id="withdraw-section"></div>
-
-                <div class="section-head">
-                    <i class="fas fa-clock-rotate-left"></i>
-                    <h2>Transaction History</h2>
-                </div>
-                <div id="withdrawal-history-section"></div>
             </div>
         </main>
-
-        <!-- Bottom Navigation -->
-        <nav class="bottom-nav-unique">
-            <button class="nav-item active" data-page="home-page"><i class="fas fa-compass"></i><span>Home</span></button>
-            <button class="nav-item" data-page="tasks-page"><i class="fas fa-bolt"></i><span>Earn</span></button>
-            <button class="nav-item" data-page="leaderboard-page"><i class="fas fa-crown"></i><span>Top</span></button>
-            <button class="nav-item" data-page="profile-page"><i class="fas fa-user"></i><span>Profile</span></button>
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-page="home-page"><i class="fas fa-home"></i><span>Home</span></button>
+            <button class="nav-btn" data-page="tasks-page"><i class="fas fa-tasks"></i><span>Tasks</span></button>
+            <button class="nav-btn" data-page="leaderboard-page"><i class="fas fa-trophy"></i><span>Leaderboard</span></button>
+            <button class="nav-btn" data-page="profile-page"><i class="fas fa-user-alt"></i><span>Profile</span></button>
         </nav>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script type="module">
-        import db from './db.js';
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tg = window.Telegram.WebApp;
+        const firebaseConfig = {
+            apiKey: "##",
+            authDomain: "##",
+            databaseURL: "##",
+            projectId: "##",
+            storageBucket: "##",
+            messagingSenderId: "##",
+            appId: "##"
+        };
+        
+        let appConfig = {}; let userState = {}; let tgUser = {}; let earningWalletBalance = 0;
+        let leaderboardData = { referral: [], earning: [] };
+        let userTransactions = [];
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const tg = window.Telegram?.WebApp;
+        const popup = document.getElementById('popup');
+        const popupBody = document.getElementById('popup-body');
+        const loadingProgress = document.getElementById('loading-progress');
 
-            let appConfig = {}; 
-            let userState = {}; 
-            let tgUser = {}; 
-            let earningWalletBalance = 0;
-            let leaderboardData = { referral: [], earning: [] };
-            let userTransactions = [];
+        const showPopup = (content) => { popupBody.innerHTML = content; popup.style.display = 'flex'; };
+        const closePopup = () => { popup.style.display = 'none'; };
+        const updateProgress = (percentage) => { loadingProgress.textContent = `${percentage}%`; };
 
-            const popup = document.getElementById('popup');
-            const popupBody = document.getElementById('popup-body');
-            const loadingProgress = document.getElementById('loading-progress');
+        const loadAdSdk = (zoneId) => {
+            if (!zoneId) { console.error("Ad Zone ID is missing from Firebase config!"); return; }
+            if (document.querySelector(`script[data-zone='${zoneId}']`)) return;
+            const script = document.createElement('script');
+            script.src = `//libtl.com/sdk.js`;
+            script.setAttribute('data-zone', zoneId);
+            script.setAttribute('data-sdk', `show_${zoneId}`);
+            script.async = true;
+            document.body.appendChild(script);
+        };
 
-            const showPopup = (content) => { 
-                popupBody.innerHTML = content; 
-                popup.style.display = 'flex'; 
-            };
-            
-            const closePopup = () => { 
-                popup.style.display = 'none'; 
-            };
-            
-            const updateProgress = (percentage) => { 
-                loadingProgress.textContent = `${percentage}%`; 
-            };
+        const initApp = async () => {
+            tg.ready(); tg.expand();
+            document.body.className = `${tg.colorScheme}-theme`;
+            tgUser = tg.initDataUnsafe.user;
+            if (!tgUser || !tgUser.id) { tg.showAlert("User data not found.", () => tg.close()); return; }
 
-            const loadAdSdk = (zoneId) => {
-                if (!zoneId) { 
-                    console.error("Ad Zone ID is missing!"); 
-                    return; 
-                }
-                if (document.querySelector(`script[data-zone='${zoneId}']`)) return;
+            try {
+                updateProgress(10); firebase.initializeApp(firebaseConfig); const db = firebase.database();
+                updateProgress(20);
                 
-                const script = document.createElement('script');
-                script.src = `//libtl.com/sdk.js`;
-                script.setAttribute('data-zone', zoneId);
-                script.setAttribute('data-sdk', `show_${zoneId}`);
-                script.async = true;
-                document.body.appendChild(script);
-            };
+                const configSnapshot = await db.ref('config').once('value');
+                appConfig = configSnapshot.val() || {};
+                updateProgress(40);
 
-            const initApp = async () => {
-                if (tg) {
-                    tg.ready(); 
-                    tg.expand();
-                    document.body.className = `${tg.colorScheme}-theme`;
-                    tgUser = tg.initDataUnsafe.user;
-                }
+                await loadUserData(db); // This now depends on appConfig, so it runs after.
+                updateProgress(60);
+
+                const referralBoardPromise = db.ref('users').orderByChild('referrals').limitToLast(10).once('value');
+                const earningBoardPromise = db.ref('users').orderByChild('totalEarned').limitToLast(10).once('value');
+                const historyPromise = loadTransactionHistory(db);
+
+                const [referralBoardSnap, earningBoardSnap] = await Promise.all([referralBoardPromise, earningBoardPromise, historyPromise]);
+                updateProgress(80);
+
+                referralBoardSnap.forEach(child => { leaderboardData.referral.push(child.val()); });
+                earningBoardSnap.forEach(child => { leaderboardData.earning.push(child.val()); });
+                leaderboardData.referral.reverse(); leaderboardData.earning.reverse();
+                updateProgress(90);
+
+                loadAdSdk(appConfig.adZoneId);
+                earningWalletBalance = parseFloat(localStorage.getItem(`earningWallet_${tgUser.id}`) || '0');
                 
-                if (!tgUser || !tgUser.id) { 
-                    if (tg) tg.showAlert("User data not found.", () => tg.close()); 
-                    return; 
-                }
+                renderUI(); setupNavigation(); setupEventListeners();
+                updateProgress(100);
 
-                try {
-                    updateProgress(10);
-                    await db.initDB();
-                    updateProgress(30);
-
-                    const configResult = await db.execute("SELECT key, value FROM admin_config");
-                    appConfig = {};
-                    configResult.data.forEach(row => {
-                        try { 
-                            appConfig[row.key] = JSON.parse(row.value); 
-                        } catch (e) { 
-                            appConfig[row.key] = row.value; 
-                        }
-                    });
-
-                    updateProgress(50);
-                    await loadUserData();
-                    updateProgress(70);
-                    await loadTransactionHistory();
-                    await loadLeaderboards();
-                    updateProgress(90);
-
-                    if (appConfig.adZoneId) loadAdSdk(appConfig.adZoneId);
-                    earningWalletBalance = parseFloat(localStorage.getItem(`earningWallet_${tgUser.id}`) || '0');
-
-                    renderUI(); 
-                    setupNavigation(); 
-                    setupEventListeners();
-                    updateProgress(100);
-
-                    setTimeout(() => {
-                        document.getElementById('app-loader').style.display = 'none';
-                        document.getElementById('app').style.display = 'block';
-                        if (appConfig.welcomeMessage && !userState.welcomed) {
-                            showPopup(`<h2 style="margin-bottom: 15px;">Welcome! 🎉</h2><p style="margin-bottom: 20px;">${appConfig.welcomeMessage}</p><button class="popup-btn" onclick="document.getElementById('popup').style.display='none'">Continue</button>`);
-                            db.execute("UPDATE users SET welcomed = 1 WHERE id = ?", [tgUser.id.toString()]);
-                        }
-                    }, 300);
-                } catch (error) { 
-                    console.error("Initialization failed:", error); 
-                    if (tg) tg.showAlert("Failed to load app data. Please try again."); 
-                }
-            };
-
-            const loadUserData = async () => {
-                const result = await db.execute("SELECT * FROM users WHERE id = ?", [tgUser.id.toString()]);
-                let userData = result.data.length > 0 ? result.data[0] : null;
-
-                if (!userData) {
-                    const startParam = tg?.initDataUnsafe?.start_param;
-                    const referralId = (startParam && !isNaN(startParam)) ? startParam : null;
-
-                    userData = {
-                        id: tgUser.id.toString(),
-                        firstName: tgUser.first_name || '',
-                        lastName: tgUser.last_name || '',
-                        username: tgUser.username || '',
-                        photoUrl: tgUser.photo_url || '',
-                        balance: 0, 
-                        referrals: 0, 
-                        referredBy: referralId, 
-                        totalEarned: 0, 
-                        lifetimeAdCount: 0,
-                        lastAdWatchDate: new Date().toISOString().slice(0, 10), 
-                        dailyAdCount: 0, 
-                        breakUntil: 0, 
-                        welcomed: 0
-                    };
-
-                    await db.execute(`
-                        INSERT INTO users (id, firstName, lastName, username, photoUrl, balance, referrals, referredBy, totalEarned, lifetimeAdCount, lastAdWatchDate, dailyAdCount, breakUntil, welcomed)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    `, [userData.id, userData.firstName, userData.lastName, userData.username, userData.photoUrl, 0, 0, referralId, 0, 0, userData.lastAdWatchDate, 0, 0, 0]);
-
-                    if (referralId && referralId != tgUser.id.toString()) {
-                        const bonusAmount = parseFloat(appConfig.referralBonus || 0);
-                        await db.execute("UPDATE users SET balance = balance + ?, referrals = referrals + 1 WHERE id = ?", [bonusAmount, referralId]);
+                setTimeout(() => {
+                    document.getElementById('app-loader').style.display = 'none';
+                    document.getElementById('app').style.display = 'block';
+                    if (appConfig.welcomeMessage && !userState.welcomed) {
+                        showPopup(`<h2>Welcome!</h2><p>${appConfig.welcomeMessage}</p><button class="popup-close-btn">Continue</button>`);
+                        db.ref(`users/${tgUser.id}/welcomed`).set(true);
                     }
+                }, 300);
+            } catch (error) { console.error("Initialization failed:", error); tg.showAlert("Failed to load app data. Please try again."); }
+        };
 
-                    userData.completedTasks = {};
-                } else {
-                    const tasksResult = await db.execute("SELECT taskId FROM user_completed_tasks WHERE userId = ?", [tgUser.id.toString()]);
-                    userData.completedTasks = {};
-                    tasksResult.data.forEach(row => { 
-                        userData.completedTasks[row.taskId] = true; 
-                    });
+        const loadUserData = async (db) => {
+            const userRef = db.ref(`users/${tgUser.id}`);
+            const snapshot = await userRef.once('value');
+            let userData = snapshot.val();
+            
+            if (!userData) {
+                // This block runs ONLY for a new user
+                const startParam = tg.initDataUnsafe.start_param;
+                const referralId = (startParam && !isNaN(startParam)) ? startParam : null;
+                
+                userData = { id: tgUser.id, firstName: tgUser.first_name || '', lastName: tgUser.last_name || '', username: tgUser.username || '', photoUrl: tgUser.photo_url || '', balance: 0, referrals: 0, referredBy: referralId, totalEarned: 0, lifetimeAdCount: 0, lastAdWatchDate: '1970-01-01', dailyAdCount: 0, breakUntil: 0, completedTasks: {}, welcomed: false };
+                await userRef.set(userData);
+                
+                // If there's a valid referrer, credit them.
+                if (referralId && referralId != tgUser.id) {
+                    const referrerRef = db.ref(`users/${referralId}`);
+                    const bonusAmount = parseFloat(appConfig.referralBonus || 0);
+                    
+                    if (bonusAmount > 0) {
+                        // We use transactions for safety to avoid race conditions.
+                        await referrerRef.transaction(currentData => {
+                            if (currentData) {
+                                currentData.balance = (currentData.balance || 0) + bonusAmount;
+                                currentData.referrals = (currentData.referrals || 0) + 1;
+                            }
+                            return currentData;
+                        });
+                    } else {
+                        // If no bonus, still increment the referral count
+                        await referrerRef.child('referrals').set(firebase.database.ServerValue.increment(1));
+                    }
                 }
+            }
+            
+            const today = new Date().toISOString().slice(0, 10);
+            if (userData.lastAdWatchDate !== today) {
+                userData.dailyAdCount = 0; userData.lastAdWatchDate = today;
+                await userRef.update({ dailyAdCount: 0, lastAdWatchDate: today });
+            }
+            userState = userData;
+        };
+        
+        const loadTransactionHistory = async (db) => {
+            userTransactions = []; // Clear previous history before loading
+            const statuses = ['pending', 'completed', 'rejected'];
+            const historyPromises = statuses.map(status => db.ref(`withdrawals/${status}`).orderByChild('userId').equalTo(tgUser.id).once('value'));
+            const snapshots = await Promise.all(historyPromises);
+            snapshots.forEach(snap => { snap.forEach(childSnap => { userTransactions.push(childSnap.val()); }); });
+            userTransactions.sort((a, b) => b.timestamp - a.timestamp);
+        };
+        
+        const renderUI = () => {
+            document.getElementById('user-photo').src = userState.photoUrl || 'https://via.placeholder.com/80';
+            document.getElementById('user-name').textContent = `${userState.firstName} ${userState.lastName}`;
+            document.getElementById('user-balance').textContent = (userState.balance || 0).toFixed(2);
+            document.getElementById('daily-ads-watched').textContent = `${userState.dailyAdCount || 0} / ${appConfig.dailyAdLimit || 0}`;
+            document.getElementById('referral-count').textContent = userState.referrals || 0;
+            document.getElementById('total-ads-watched').textContent = userState.lifetimeAdCount || 0;
+            document.getElementById('total-earned').textContent = (userState.totalEarned || 0).toFixed(2);
+            document.getElementById('earning-wallet-balance').textContent = earningWalletBalance.toFixed(2);
+            document.getElementById('move-to-balance-btn').disabled = earningWalletBalance < 100;
+            renderAdTask(); renderAdProgress(); renderDynamicTasks(); renderReferralSection(); renderWithdrawSection(); renderEarningsGraph(); renderDynamicLinks();
+        };
+        
+        const renderAdProgress = () => {
+            const container = document.getElementById('ad-progress-container');
+            const dailyLimit = appConfig.dailyAdLimit || 1;
+            const watchedCount = userState.dailyAdCount || 0;
+            const percentage = (watchedCount / dailyLimit) * 100;
+            container.innerHTML = `<div class="progress-info"><span>Daily Ad Progress</span><span>${watchedCount} / ${dailyLimit}</span></div><div class="progress-bar-bg"><div class="progress-bar-fg" style="width: ${percentage}%;"></div></div>`;
+        };
+        
+        const renderEarningsGraph = async () => {
+             const chartEl = document.getElementById('earnings-chart'); const labelsEl = document.getElementById('earnings-chart-labels');
+            chartEl.innerHTML = ''; labelsEl.innerHTML = '';
+            const today = new Date(); const dates = [];
+            for (let i = 6; i >= 0; i--) { const date = new Date(today); date.setDate(today.getDate() - i); dates.push(date.toISOString().slice(0, 10)); }
+            const earningsPromises = dates.map(date => firebase.database().ref(`userEarnings/${tgUser.id}/${date}`).once('value'));
+            const snapshots = await Promise.all(earningsPromises);
+            const earningsData = snapshots.map(snap => snap.val() || 0);
+            const maxEarning = Math.max(...earningsData, 1);
+            earningsData.forEach((earning, index) => {
+                const height = (earning / maxEarning) * 100;
+                const dateLabel = new Date(dates[index]).toLocaleDateString('en-US', { day: 'numeric' });
+                chartEl.innerHTML += `<div class="bar" style="height: ${height}%;"><span class="tooltip">${earning.toFixed(2)} TK</span></div>`;
+                labelsEl.innerHTML += `<span>${dateLabel}</span>`;
+            });
+        };
+        
+        const handleWatchAd = async () => {
+            if (userState.dailyAdCount >= appConfig.dailyAdLimit) { tg.showAlert("You have reached your daily ad watch limit."); return; }
+            const now = Date.now();
+            if (userState.breakUntil && now < userState.breakUntil) {
+                const remaining = Math.ceil((userState.breakUntil - now) / 60000);
+                tg.showAlert(`Please wait for ${remaining} more minutes.`); return;
+            }
+            
+            const adFunction = window['show_' + appConfig.adZoneId];
+            if (typeof adFunction !== 'function') {
+                tg.showAlert("Ad network is not ready yet. Please wait a few seconds and try again."); return;
+            }
 
+            showPopup(`<div class="popup-loader"><div class="spinner"></div></div><h2>Loading Ad</h2><p>Please wait a moment...</p>`);
+            
+            try {
+                await adFunction();
+                closePopup();
+                const adValue = appConfig.adValue || 0;
+                
+                earningWalletBalance += adValue;
+                localStorage.setItem(`earningWallet_${tgUser.id}`, earningWalletBalance.toString());
+
+                userState.dailyAdCount++;
+                userState.lifetimeAdCount++;
+                userState.totalEarned = (userState.totalEarned || 0) + adValue;
+
+                const db = firebase.database(); const userRef = db.ref(`users/${tgUser.id}`);
+                const updates = {};
+                updates.dailyAdCount = userState.dailyAdCount;
+                updates.lifetimeAdCount = userState.lifetimeAdCount;
+                updates.totalEarned = userState.totalEarned;
+                if ((userState.dailyAdCount) % appConfig.adsPerBreak === 0 && appConfig.adsPerBreak > 0) {
+                    updates.breakUntil = Date.now() + (appConfig.breakDuration * 60000);
+                    userState.breakUntil = updates.breakUntil;
+                }
+                await userRef.update(updates);
+                
                 const today = new Date().toISOString().slice(0, 10);
-                if (userData.lastAdWatchDate !== today) {
-                    userData.dailyAdCount = 0; 
-                    userData.lastAdWatchDate = today;
-                    await db.execute("UPDATE users SET dailyAdCount = 0, lastAdWatchDate = ? WHERE id = ?", [today, tgUser.id.toString()]);
-                }
-                userState = userData;
-            };
+                await db.ref(`userEarnings/${tgUser.id}/${today}`).set(firebase.database.ServerValue.increment(adValue));
 
-            const loadTransactionHistory = async () => {
-                const result = await db.execute("SELECT * FROM withdrawals WHERE userId = ? ORDER BY timestamp DESC", [tgUser.id.toString()]);
-                userTransactions = result.data;
-            };
+                tg.HapticFeedback.notificationOccurred('success');
+                tg.showAlert(`+${adValue.toFixed(2)} TK added to your Earning Wallet.`);
+                
+                renderUI();
 
-            const loadLeaderboards = async () => {
-                const refBoard = await db.execute("SELECT * FROM users ORDER BY referrals DESC LIMIT 10");
-                const earnBoard = await db.execute("SELECT * FROM users ORDER BY totalEarned DESC LIMIT 10");
-                leaderboardData.referral = refBoard.data;
-                leaderboardData.earning = earnBoard.data;
-            };
+            } catch (error) {
+                console.error("Ad failed to load:", error);
+                closePopup();
+                tg.showAlert("Ad could not be loaded. Please try again.");
+            }
+        };
 
-            const renderUI = () => {
-                document.getElementById('user-photo').src = userState.photoUrl || 'https://via.placeholder.com/90';
-                document.getElementById('user-name').textContent = `${userState.firstName || ''} ${userState.lastName || ''}`.trim() || 'User';
-                document.getElementById('user-balance').textContent = (userState.balance || 0).toFixed(2);
-                document.getElementById('daily-ads-watched').textContent = `${userState.dailyAdCount || 0} / ${appConfig.dailyAdLimit || 0}`;
-                document.getElementById('referral-count').textContent = userState.referrals || 0;
-                document.getElementById('total-ads-watched').textContent = userState.lifetimeAdCount || 0;
-                document.getElementById('total-earned').textContent = (userState.totalEarned || 0).toFixed(2);
-                document.getElementById('earning-wallet-balance').textContent = earningWalletBalance.toFixed(2);
-                
-                const moveBtn = document.getElementById('move-to-balance-btn');
-                if (moveBtn) {
-                    moveBtn.disabled = earningWalletBalance < 100;
-                }
-                
-                renderAdTask(); 
-                renderAdProgress(); 
-                renderDynamicTasks(); 
-                renderReferralSection(); 
-                renderWithdrawSection(); 
-                renderEarningsGraph(); 
-                renderDynamicLinks();
-            };
+        const handleMoveToBalance = async () => {
+            if(earningWalletBalance < 100) { tg.showAlert("You need at least 100 TK to move."); return; }
+            const btn = document.getElementById('move-to-balance-btn'); btn.disabled = true; btn.textContent = 'Moving...';
+            try {
+                const db = firebase.database();
+                await db.ref(`users/${tgUser.id}/balance`).set(firebase.database.ServerValue.increment(earningWalletBalance));
+                userState.balance += earningWalletBalance;
+                earningWalletBalance = 0;
+                localStorage.setItem(`earningWallet_${tgUser.id}`, '0');
+                tg.HapticFeedback.notificationOccurred('success');
+                tg.showAlert("Successfully moved to main balance!");
+            } catch(error) { console.error("Failed to move balance:", error); tg.showAlert("Failed to move balance. Please try again.");
+            } finally { btn.textContent = 'Move to Main Balance'; renderUI(); }
+        };
 
-            const renderAdProgress = () => {
-                const container = document.getElementById('ad-progress-container');
-                if (!container) return;
-                
-                const dailyLimit = appConfig.dailyAdLimit || 1;
-                const watchedCount = userState.dailyAdCount || 0;
-                const percentage = Math.min((watchedCount / dailyLimit) * 100, 100);
-                
-                container.innerHTML = `
-                    <div class="progress-header">
-                        <span>Daily Progress</span>
-                        <span>${watchedCount} / ${dailyLimit}</span>
+        const renderWithdrawalHistory = () => {
+            const listEl = document.getElementById('withdrawal-history-list');
+            if (userTransactions.length === 0) { listEl.innerHTML = '<p>No withdrawal history found.</p>'; return; }
+            listEl.innerHTML = userTransactions.map(item => `
+                <div class="history-item">
+                    <div class="history-details">
+                        <p>${item.amount.toFixed(2)} TK - ${item.method}</p>
+                        <small>${new Date(item.timestamp).toLocaleString()}</small>
                     </div>
-                    <div class="progress-bg">
-                        <div class="progress-fill" style="width: ${percentage}%;"></div>
-                    </div>
-                `;
-            };
-
-            const renderEarningsGraph = async () => {
-                const chartEl = document.getElementById('earnings-chart'); 
-                const labelsEl = document.getElementById('earnings-chart-labels');
-                if (!chartEl || !labelsEl) return;
-                
-                chartEl.innerHTML = ''; 
-                labelsEl.innerHTML = '';
-                
-                const today = new Date(); 
-                const dates = [];
-                for (let i = 6; i >= 0; i--) { 
-                    const date = new Date(today); 
-                    date.setDate(today.getDate() - i); 
-                    dates.push(date.toISOString().slice(0, 10)); 
-                }
-
-                const earningsResult = await db.execute(
-                    `SELECT date, amount FROM user_earnings WHERE userId = ? AND date IN (${dates.map(() => '?').join(',')})`, 
-                    [tgUser.id.toString(), ...dates]
-                );
-                
-                const earningsMap = {};
-                earningsResult.data.forEach(row => { 
-                    earningsMap[row.date] = row.amount; 
+                    <span class="history-status status-${item.status}">${item.status}</span>
+                </div>`).join('');
+        };
+        
+        const setupNavigation = () => {
+            const navButtons = document.querySelectorAll('.nav-btn'); const pages = document.querySelectorAll('.page');
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const pageId = button.dataset.page;
+                    pages.forEach(page => page.classList.remove('active'));
+                    document.getElementById(pageId).classList.add('active');
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    if (pageId === 'profile-page') { renderWithdrawalHistory(); }
+                    if (pageId === 'leaderboard-page') { renderLeaderboard(); }
                 });
-
-                const earningsData = dates.map(date => earningsMap[date] || 0);
-                const maxEarning = Math.max(...earningsData, 1);
-
-                earningsData.forEach((earning, index) => {
-                    const height = (earning / maxEarning) * 100;
-                    const dateLabel = new Date(dates[index]).toLocaleDateString('en-US', { day: 'numeric' });
-                    
-                    chartEl.innerHTML += `
-                        <div class="chart-bar" style="height: ${height}%;">
-                            <span class="tooltip">${earning.toFixed(2)} TK</span>
-                        </div>
-                    `;
-                    
-                    labelsEl.innerHTML += `<span>${dateLabel}</span>`;
-                });
-            };
-
-            const handleWatchAd = async () => {
-                if (tg) tg.HapticFeedback?.impactOccurred('medium');
-                
-                if (userState.dailyAdCount >= appConfig.dailyAdLimit) { 
-                    if (tg) tg.showAlert("You have reached your daily ad watch limit."); 
-                    return; 
+            });
+        };
+        
+        const setupEventListeners = () => {
+            popup.addEventListener('click', (e) => { if (e.target.classList.contains('popup-close-btn') || e.target.id === 'popup') closePopup(); });
+            document.querySelector('.leaderboard-toggle').addEventListener('click', (e) => {
+                if(e.target.classList.contains('toggle-btn')) {
+                    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    renderLeaderboard();
                 }
-                
-                const now = Date.now();
-                if (userState.breakUntil && now < userState.breakUntil) {
-                    const remaining = Math.ceil((userState.breakUntil - now) / 60000);
-                    if (tg) tg.showAlert(`Please wait for ${remaining} more minutes.`); 
-                    return;
-                }
+            });
+            document.getElementById('dynamic-tasks-container').addEventListener('click', (e) => handleClaimTask(e));
+            // Event listener is attached directly to the form now for better handling
+            document.getElementById('profile-page').addEventListener('submit', (e) => handleWithdraw(e));
+            document.getElementById('referral-section').addEventListener('click', (e) => { if(e.target.id === 'copy-ref-link-btn') copyReferralLink(); });
+            document.getElementById('move-to-balance-btn').addEventListener('click', handleMoveToBalance);
+        };
 
-                const adFunction = window['show_' + appConfig.adZoneId];
-                if (typeof adFunction !== 'function') {
-                    if (tg) tg.showAlert("Ad network is not ready yet. Please wait a few seconds and try again."); 
-                    return;
-                }
+        const renderAdTask = () => {
+            const container = document.getElementById('ad-task-container');
+            const now = Date.now();
+            const onBreak = userState.breakUntil && now < userState.breakUntil;
+            const limitReached = userState.dailyAdCount >= appConfig.dailyAdLimit;
+            let html = '';
+            if (onBreak) {
+                const remaining = Math.ceil((userState.breakUntil - now) / 60000);
+                html = `<div class="task-container"><img class="task-icon-img" src="https://img.icons8.com/ios-filled/100/hourglass.png" alt="icon"><div class="task-info"><h3>Break Time!</h3><p>Please wait for ${remaining} more minutes.</p></div><button class="action-btn" disabled>Waiting</button></div>`;
+            } else if (limitReached) {
+                html = `<div class="task-container"><img class="task-icon-img" src="https://img.icons8.com/ios-filled/100/stop-circled.png" alt="icon"><div class="task-info"><h3>Daily Limit Reached</h3><p>Come back tomorrow for more ads.</p></div><button class="action-btn" disabled>Limit</button></div>`;
+            } else {
+                html = `<div class="task-container"><img class="task-icon-img" src="https://img.icons8.com/ios-filled/100/play-button-circled.png" alt="icon"><div class="task-info"><h3>Watch a Rewarded Ad</h3><p>Earn ${appConfig.adValue || 0} TK for every ad.</p></div><button id="watch-ad-btn" class="action-btn">Watch Ad</button></div>`;
+            }
+            container.innerHTML = html;
+            if (!onBreak && !limitReached) { document.getElementById('watch-ad-btn').addEventListener('click', handleWatchAd); }
+        };
 
-                showPopup(`
-                    <i class="fas fa-spinner fa-spin" style="font-size: 50px; color: #8B5CF6; margin-bottom: 20px;"></i>
-                    <h2 style="margin-bottom: 15px;">Loading Ad</h2>
-                    <p style="margin-bottom: 20px;">Please wait a moment...</p>
-                    <button class="popup-btn" onclick="document.getElementById('popup').style.display='none'">Cancel</button>
-                `);
-
-                try {
-                    await adFunction();
-                    closePopup();
-                    
-                    const adValue = appConfig.adValue || 0;
-                    earningWalletBalance += adValue;
-                    localStorage.setItem(`earningWallet_${tgUser.id}`, earningWalletBalance.toString());
-
-                    userState.dailyAdCount++;
-                    userState.lifetimeAdCount++;
-                    userState.totalEarned = (userState.totalEarned || 0) + adValue;
-
-                    const updates = [userState.dailyAdCount, userState.lifetimeAdCount, userState.totalEarned];
-                    let query = "UPDATE users SET dailyAdCount = ?, lifetimeAdCount = ?, totalEarned = ?";
-
-                    if ((userState.dailyAdCount) % appConfig.adsPerBreak === 0 && appConfig.adsPerBreak > 0) {
-                        const breakUntil = Date.now() + (appConfig.breakDuration * 60000);
-                        userState.breakUntil = breakUntil;
-                        query += ", breakUntil = ?";
-                        updates.push(breakUntil);
-                    }
-                    
-                    query += " WHERE id = ?";
-                    updates.push(tgUser.id.toString());
-
-                    await db.execute(query, updates);
-
-                    const today = new Date().toISOString().slice(0, 10);
-                    await db.execute(`
-                        INSERT INTO user_earnings (userId, date, amount) VALUES (?, ?, ?)
-                        ON CONFLICT(userId, date) DO UPDATE SET amount = amount + EXCLUDED.amount
-                    `, [tgUser.id.toString(), today, adValue]);
-
-                    if (tg) {
-                        tg.HapticFeedback?.notificationOccurred('success');
-                        tg.showAlert(`+${adValue.toFixed(2)} TK added to your Earning Wallet.`);
-                    }
-
-                    renderUI();
-
-                } catch (error) {
-                    console.error("Ad failed to load:", error);
-                    closePopup();
-                    if (tg) tg.showAlert("Ad could not be loaded. Please try again.");
-                }
-            };
-
-            const handleMoveToBalance = async () => {
-                if (tg) tg.HapticFeedback?.impactOccurred('medium');
-                
-                if (earningWalletBalance < 100) { 
-                    if (tg) tg.showAlert("You need at least 100 TK to move."); 
-                    return; 
-                }
-                
-                const btn = document.getElementById('move-to-balance-btn'); 
-                btn.disabled = true; 
-                btn.textContent = 'Moving...';
-                
-                try {
-                    await db.execute("UPDATE users SET balance = balance + ? WHERE id = ?", [earningWalletBalance, tgUser.id.toString()]);
-                    userState.balance += earningWalletBalance;
-                    earningWalletBalance = 0;
-                    localStorage.setItem(`earningWallet_${tgUser.id}`, '0');
-                    
-                    if (tg) {
-                        tg.HapticFeedback?.notificationOccurred('success');
-                        tg.showAlert("Successfully moved to main balance!");
-                    }
-                    
-                    renderUI();
-                } catch (error) { 
-                    console.error("Failed to move balance:", error); 
-                    if (tg) tg.showAlert("Failed to move balance. Please try again.");
-                } finally { 
-                    btn.textContent = 'Transfer to Main Balance'; 
-                }
-            };
-
-            const renderWithdrawalHistory = () => {
-                const listEl = document.getElementById('withdrawal-history-section');
-                if (!listEl) return;
-                
-                if (userTransactions.length === 0) { 
-                    listEl.innerHTML = '<p style="text-align: center; padding: 30px; color: var(--text-soft-light);">No transactions yet</p>'; 
-                    return; 
-                }
-                
-                listEl.innerHTML = userTransactions.map(item => `
-                    <div class="history-card">
-                        <div>
-                            <p style="font-weight: 700; margin-bottom: 5px;">${item.amount.toFixed(2)} TK - ${item.method}</p>
-                            <small style="color: var(--text-soft-light);">${new Date(item.timestamp).toLocaleString()}</small>
-                        </div>
-                        <span class="history-badge badge-${item.status}">${item.status}</span>
-                    </div>
-                `).join('');
-            };
-
-            const setupNavigation = () => {
-                const navButtons = document.querySelectorAll('.nav-item'); 
-                const pages = document.querySelectorAll('.page');
-                
-                navButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const pageId = button.dataset.page;
-                        pages.forEach(page => page.classList.remove('active'));
-                        document.getElementById(pageId).classList.add('active');
-                        navButtons.forEach(btn => btn.classList.remove('active'));
-                        button.classList.add('active');
-                        
-                        if (pageId === 'profile-page') { 
-                            renderWithdrawalHistory(); 
-                        }
-                        if (pageId === 'leaderboard-page') { 
-                            renderLeaderboard(); 
-                        }
-                        
-                        if (tg) tg.HapticFeedback?.impactOccurred('light');
-                    });
-                });
-            };
-
-            const setupEventListeners = () => {
-                popup.addEventListener('click', (e) => { 
-                    if (e.target.classList.contains('popup-btn') || e.target.classList.contains('popup-overlay')) closePopup(); 
-                });
-                
-                document.querySelector('.toggle-switch')?.addEventListener('click', (e) => {
-                    if (e.target.classList.contains('toggle-option')) {
-                        document.querySelectorAll('.toggle-option').forEach(b => b.classList.remove('active'));
-                        e.target.classList.add('active');
-                        renderLeaderboard();
-                    }
-                });
-                
-                document.getElementById('move-to-balance-btn')?.addEventListener('click', handleMoveToBalance);
-                
-                // Work Videos toggle
-                document.getElementById('work-videos-box')?.addEventListener('click', () => {
-                    const wrapper = document.getElementById('bonus-tasks-wrapper');
-                    if (wrapper) {
-                        if (wrapper.style.display === 'none') {
-                            wrapper.style.display = 'block';
-                            wrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                        } else {
-                            wrapper.style.display = 'none';
-                        }
-                    }
-                    if (tg) tg.HapticFeedback?.impactOccurred('light');
-                });
-            };
-
-            const renderAdTask = () => {
-                const container = document.getElementById('ad-task-container');
-                if (!container) return;
-                
-                const now = Date.now();
-                const onBreak = userState.breakUntil && now < userState.breakUntil;
-                const limitReached = userState.dailyAdCount >= appConfig.dailyAdLimit;
-                
-                if (onBreak) {
-                    const remaining = Math.ceil((userState.breakUntil - now) / 60000);
-                    container.innerHTML = `
-                        <div class="box-icon"><i class="fas fa-hourglass-half"></i></div>
-                        <h4>Break Time</h4>
-                        <p>Wait ${remaining} min</p>
-                        <span class="box-badge">Paused</span>
-                    `;
-                } else if (limitReached) {
-                    container.innerHTML = `
-                        <div class="box-icon"><i class="fas fa-ban"></i></div>
-                        <h4>Daily Limit</h4>
-                        <p>Come back tomorrow</p>
-                        <span class="box-badge">Full</span>
-                    `;
-                } else {
-                    container.innerHTML = `
-                        <div class="box-icon"><i class="fas fa-play"></i></div>
-                        <h4>Watch Ad</h4>
-                        <p>Earn ${appConfig.adValue || 0} TK</p>
-                        <span class="box-badge">Earn Now</span>
-                    `;
-                    container.addEventListener('click', handleWatchAd, { once: true });
-                }
-            };
-
-            const handleClaimTask = async (e) => {
-                if (!e.target.classList.contains('bonus-btn') || !e.target.dataset.taskId) return;
-                
-                e.stopPropagation();
-                if (tg) tg.HapticFeedback?.impactOccurred('medium');
-                
+        const handleClaimTask = async (e) => {
+            if (e.target.classList.contains('action-btn') && e.target.dataset.taskId) {
                 const taskId = e.target.dataset.taskId;
-                const tasksResult = await db.execute("SELECT * FROM bonus_tasks WHERE id = ?", [taskId]);
-                const task = tasksResult.data[0];
-
-                if (!task || (userState.completedTasks && userState.completedTasks[taskId])) { 
-                    if (tg) tg.showAlert('You have already claimed this bonus.'); 
-                    return; 
-                }
-                
-                if (tg) tg.openLink(task.url);
-                e.target.disabled = true; 
-                e.target.textContent = 'Claiming...';
-                
+                const task = appConfig.tasks[taskId];
+                if (!task || (userState.completedTasks && userState.completedTasks[taskId])) { tg.showAlert('You have already claimed this bonus.'); return; }
+                tg.openLink(e.target.dataset.taskUrl);
+                e.target.disabled = true; e.target.textContent = 'Claiming...';
                 setTimeout(async () => {
                     try {
-                        await db.execute("INSERT INTO user_completed_tasks (userId, taskId) VALUES (?, ?)", [tgUser.id.toString(), taskId]);
-                        await db.execute("UPDATE users SET balance = balance + ? WHERE id = ?", [task.reward, tgUser.id.toString()]);
-
+                        const db = firebase.database(); const userRef = db.ref(`users/${tgUser.id}`);
+                        await userRef.child(`completedTasks/${taskId}`).set(true);
+                        await userRef.child('balance').set(firebase.database.ServerValue.increment(task.reward));
                         userState.balance += task.reward;
                         if (!userState.completedTasks) userState.completedTasks = {};
                         userState.completedTasks[taskId] = true;
-
-                        if (tg) {
-                            tg.HapticFeedback?.notificationOccurred('success');
-                            tg.showAlert(`Thank you! You received ${task.reward} bonus TK.`);
-                        }
-                        
+                        tg.HapticFeedback.notificationOccurred('success');
+                        tg.showAlert(`Thank you! You received ${task.reward} bonus TK.`);
                         renderUI();
-                    } catch (error) { 
-                        if (tg) tg.showAlert('Failed to claim bonus.'); 
-                        e.target.disabled = false; 
-                        e.target.textContent = 'Claim'; 
-                    }
+                    } catch (error) { tg.showAlert('Failed to claim bonus.'); e.target.disabled = false; e.target.textContent = 'Claim Bonus'; }
                 }, 5000);
-            };
+            }
+        };
 
-            const handleWithdraw = async (e) => {
-                e.preventDefault();
+        const handleWithdraw = async (e) => {
+            // Ensure this function only runs for the withdraw form
+            if(e.target.id !== 'withdraw-form') return;
+            e.preventDefault();
+
+            // *** NEW: Minimum referral check ***
+            const minRefsRequired = appConfig.minimumWithdrawReferrals || 0;
+            const userReferrals = userState.referrals || 0;
+            
+            if (minRefsRequired > 0 && userReferrals < minRefsRequired) {
+                tg.showAlert(`Withdrawal failed. You need at least ${minRefsRequired} referrals to make a withdrawal. You currently have ${userReferrals}.`);
+                return; // Stop the function here
+            }
+
+            const methodEl = document.getElementById('withdraw-method');
+            const accountNumber = document.getElementById('account-number').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+            const selectedMethod = appConfig.withdrawMethods.find(m => m.name === methodEl.value);
+            
+            if (isNaN(amount) || amount <= 0) { tg.showAlert("Please enter a valid amount."); return; }
+            if (!selectedMethod) { tg.showAlert("Invalid withdrawal method."); return; }
+            if (amount < selectedMethod.min) { tg.showAlert(`Minimum withdrawal for ${selectedMethod.name} is ${selectedMethod.min} TK.`); return; }
+            if (amount > userState.balance) { tg.showAlert("You don't have enough balance."); return; }
+            
+            const btn = document.getElementById('withdraw-submit-btn'); btn.disabled = true; btn.textContent = 'Submitting...';
+            const db = firebase.database();
+            try {
+                const userRef = db.ref(`users/${tgUser.id}`);
+                // Optimistically update local state for faster UI response
+                userState.balance -= amount;
+                renderUI(); 
                 
-                if (!e.target.id === 'withdraw-form') return;
-                if (tg) tg.HapticFeedback?.impactOccurred('medium');
-
-                const minRefsRequired = appConfig.minimumWithdrawReferrals || 0;
-                const userReferrals = userState.referrals || 0;
-
-                if (minRefsRequired > 0 && userReferrals < minRefsRequired) {
-                    if (tg) tg.showAlert(`Withdrawal failed. You need at least ${minRefsRequired} referrals to make a withdrawal. You currently have ${userReferrals}.`);
-                    return;
-                }
-
-                const methodEl = document.getElementById('withdraw-method');
-                const accountNumber = document.getElementById('account-number')?.value;
-                const amount = parseFloat(document.getElementById('amount')?.value);
-                const selectedMethod = appConfig.withdrawMethods?.find(m => m.name === methodEl?.value);
-
-                if (!accountNumber || !amount) {
-                    if (tg) tg.showAlert("Please fill all fields.");
-                    return;
-                }
-
-                if (isNaN(amount) || amount <= 0) { 
-                    if (tg) tg.showAlert("Please enter a valid amount."); 
-                    return; 
-                }
+                // Perform database operations
+                await userRef.child('balance').set(firebase.database.ServerValue.increment(-amount));
+                const reqId = db.ref('withdrawals/pending').push().key;
+                const newRequest = { id: reqId, userId: tgUser.id, userName: `${userState.firstName} ${userState.lastName}`, method: selectedMethod.name, account: accountNumber, amount: amount, status: 'pending', timestamp: firebase.database.ServerValue.TIMESTAMP };
+                await db.ref(`withdrawals/pending/${reqId}`).set(newRequest);
                 
-                if (!selectedMethod) { 
-                    if (tg) tg.showAlert("Invalid withdrawal method."); 
-                    return; 
-                }
-                
-                if (amount < selectedMethod.min) { 
-                    if (tg) tg.showAlert(`Minimum withdrawal for ${selectedMethod.name} is ${selectedMethod.min} TK.`); 
-                    return; 
-                }
-                
-                if (amount > userState.balance) { 
-                    if (tg) tg.showAlert("You don't have enough balance."); 
-                    return; 
-                }
+                // Add to local history instantly and re-render history
+                userTransactions.unshift(newRequest);
+                renderWithdrawalHistory(); 
 
-                const btn = document.getElementById('withdraw-submit-btn'); 
-                btn.disabled = true; 
-                btn.textContent = 'Submitting...';
-                
-                try {
-                    userState.balance -= amount;
-                    renderUI();
+                tg.HapticFeedback.notificationOccurred('success');
+                tg.showAlert("Withdrawal request submitted successfully!");
+                document.getElementById('withdraw-form').reset();
+            } catch (error) {
+                // If error, revert the optimistic update
+                userState.balance += amount;
+                tg.HapticFeedback.notificationOccurred('error'); 
+                tg.showAlert("Failed to submit request. Your balance has been restored.");
+            } finally {
+                // Ensure UI is correct and button is re-enabled
+                renderUI();
+                btn.disabled = false;
+                btn.textContent = 'Submit Request';
+            }
+        };
 
-                    await db.execute("UPDATE users SET balance = balance - ? WHERE id = ?", [amount, tgUser.id.toString()]);
-                    
-                    const reqId = Date.now().toString() + Math.random().toString(36).substr(2, 5);
-                    const timestamp = Date.now();
-                    const newRequest = { 
-                        id: reqId, 
-                        userId: tgUser.id.toString(), 
-                        userName: `${userState.firstName} ${userState.lastName}`.trim(), 
-                        method: selectedMethod.name, 
-                        account: accountNumber, 
-                        amount: amount, 
-                        status: 'pending', 
-                        timestamp: timestamp 
-                    };
-
-                    await db.execute(`
-                        INSERT INTO withdrawals (id, userId, userName, method, account, amount, status, timestamp)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                    `, [reqId, newRequest.userId, newRequest.userName, newRequest.method, newRequest.account, newRequest.amount, 'pending', timestamp]);
-
-                    userTransactions.unshift(newRequest);
-                    renderWithdrawalHistory();
-
-                    if (tg) {
-                        tg.HapticFeedback?.notificationOccurred('success');
-                        tg.showAlert("Withdrawal request submitted successfully!");
-                    }
-                    
-                    document.getElementById('withdraw-form')?.reset();
-                } catch (error) {
-                    userState.balance += amount;
-                    if (tg) {
-                        tg.HapticFeedback?.notificationOccurred('error');
-                        tg.showAlert("Failed to submit request. Your balance has been restored.");
-                    }
-                } finally {
-                    renderUI();
-                    btn.disabled = false;
-                    btn.textContent = 'Submit Request';
-                }
-            };
-
-            const copyReferralLink = async () => {
-                if (tg) tg.HapticFeedback?.impactOccurred('medium');
-                
-                const refLinkInput = document.getElementById('referral-link');
-                if (!refLinkInput) return;
-                
-                const url = refLinkInput.value;
-
-                try {
-                    if (navigator.clipboard && window.isSecureContext) {
-                        await navigator.clipboard.writeText(url);
-                        if (tg) {
-                            tg.HapticFeedback?.notificationOccurred('success');
-                            tg.showAlert("Referral link copied!");
-                        }
-                    } else {
-                        refLinkInput.select();
-                        refLinkInput.setSelectionRange(0, 99999);
-                        const successful = document.execCommand('copy');
-                        if (successful) {
-                            if (tg) {
-                                tg.HapticFeedback?.notificationOccurred('success');
-                                tg.showAlert("Referral link copied!");
-                            }
-                        } else {
-                            throw new Error('Copy failed');
-                        }
-                    }
-                } catch (err) {
-                    if (tg) tg.showAlert("Please manually copy the link from the box.");
-                }
-            };
-
-            const renderLeaderboard = () => {
-                const activeBoard = document.querySelector('.toggle-option.active')?.dataset.board;
-                const listEl = document.getElementById(activeBoard === 'referral' ? 'referral-leaderboard-list' : 'earning-leaderboard-list');
-                const data = leaderboardData[activeBoard];
-                
-                document.getElementById('referral-board').style.display = activeBoard === 'referral' ? 'block' : 'none';
-                document.getElementById('earning-board').style.display = activeBoard === 'earning' ? 'block' : 'none';
-                
-                if (!listEl) return;
-                
-                listEl.innerHTML = '';
-                
-                if (data.length === 0) { 
-                    listEl.innerHTML = '<p style="text-align: center; padding: 30px; color: var(--text-soft-light);">No data available.</p>'; 
-                    return; 
-                }
-                
-                data.forEach((user, index) => {
-                    const score = activeBoard === 'referral' ? (user.referrals || 0) : (user.totalEarned || 0).toFixed(2);
-                    const item = document.createElement('div'); 
-                    item.className = 'rank-card';
-                    item.innerHTML = `
-                        <span class="rank-number">#${index + 1}</span>
-                        <img class="rank-avatar" src="${user.photoUrl || 'https://via.placeholder.com/55'}" alt="User">
-                        <div class="rank-info">
-                            <div class="rank-name">${user.firstName || 'User'}</div>
-                            <div class="rank-score">${score}</div>
-                        </div>
-                    `;
-                    listEl.appendChild(item);
+        const copyReferralLink = () => {
+            const refLinkInput = document.getElementById('referral-link');
+            refLinkInput.select();
+            refLinkInput.setSelectionRange(0, 99999); // For mobile devices
+            try {
+                navigator.clipboard.writeText(refLinkInput.value).then(() => {
+                    tg.HapticFeedback.notificationOccurred('success');
+                    tg.showAlert("Referral link copied!");
                 });
-            };
+            } catch (err) {
+                // Fallback for older browsers
+                document.execCommand('copy');
+                tg.HapticFeedback.notificationOccurred('success');
+                tg.showAlert("Referral link copied!");
+            }
+        };
 
-            const renderDynamicTasks = async () => {
-                const container = document.getElementById('dynamic-tasks-container'); 
-                if (!container) return;
-                
-                container.innerHTML = '';
-                
-                const result = await db.execute("SELECT * FROM bonus_tasks");
-                const tasks = result.data;
+        const renderLeaderboard = () => {
+            const activeBoard = document.querySelector('.toggle-btn.active').dataset.board;
+            const listEl = document.getElementById(activeBoard === 'referral' ? 'referral-leaderboard-list' : 'earning-leaderboard-list');
+            const data = leaderboardData[activeBoard];
+            document.getElementById('referral-board').style.display = activeBoard === 'referral' ? 'block' : 'none';
+            document.getElementById('earning-board').style.display = activeBoard === 'earning' ? 'block' : 'none';
+            listEl.innerHTML = '';
+            if (data.length === 0) { listEl.innerHTML = '<li>No data available.</li>'; return; }
+            data.forEach((user, index) => {
+                const score = activeBoard === 'referral' ? (user.referrals || 0) : (user.totalEarned || 0).toFixed(2);
+                const item = document.createElement('li'); item.className = 'leaderboard-item';
+                item.innerHTML = `<span class="rank">#${index + 1}</span><img src="${user.photoUrl || 'https://via.placeholder.com/40'}" alt="User"><span class="leaderboard-name">${user.firstName}</span><span class="leaderboard-score">${score}</span>`;
+                listEl.appendChild(item);
+            });
+        };
+
+        const renderDynamicTasks = () => {
+            const container = document.getElementById('dynamic-tasks-container'); container.innerHTML = '';
+            if (appConfig.tasks) {
+                const tasks = [];
+                for(const key in appConfig.tasks) { tasks.push({key, ...appConfig.tasks[key]}); }
                 tasks.reverse();
-                
                 tasks.forEach(task => {
-                    const isCompleted = userState.completedTasks && userState.completedTasks[task.id];
-                    const el = document.createElement('div'); 
-                    el.className = 'bonus-task-card';
-                    el.innerHTML = `
-                        <div class="bonus-icon"><i class="fas fa-gift"></i></div>
-                        <div class="bonus-info">
-                            <h4>${task.name}</h4>
-                            <p>Get ${task.reward} TK</p>
-                        </div>
-                        <button class="bonus-btn" data-task-id="${task.id}" data-task-url="${task.url}" ${isCompleted ? 'disabled' : ''}>
-                            ${isCompleted ? 'Claimed' : 'Claim'}
-                        </button>
-                    `;
+                    const isCompleted = userState.completedTasks && userState.completedTasks[task.key];
+                    const el = document.createElement('div'); el.className = 'task-container';
+                    el.innerHTML = `<img class="task-icon-img" src="${task.icon}" alt="icon"><div class="task-info"><h3>${task.name}</h3><p>Get ${task.reward} bonus TK.</p></div><button class="action-btn" data-task-id="${task.key}" data-task-url="${task.url}" ${isCompleted ? 'disabled' : ''}>${isCompleted ? 'Claimed' : 'Claim Bonus'}</button>`;
                     container.appendChild(el);
-                    
-                    const btn = el.querySelector('.bonus-btn');
-                    if (btn && !isCompleted) {
-                        btn.addEventListener('click', handleClaimTask);
-                    }
                 });
-            };
+            }
+        };
 
-            const renderReferralSection = () => {
-                const container = document.getElementById('referral-section');
-                if (!container) return;
-                
-                const botUsername = appConfig.botUsername || 'app';
-                const refLink = `https://t.me/${botUsername}/app?startapp=${tgUser.id}`;
-                
-                container.innerHTML = `
-                    <div class="referral-box">
-                        <i class="fas fa-user-plus" style="font-size: 3rem; color: var(--primary-500); margin-bottom: 15px;"></i>
-                        <h3 style="margin-bottom: 10px;">Invite Friends</h3>
-                        <p style="margin: 10px 0;">Earn ${appConfig.referralBonus || 0} TK per referral</p>
-                        <div class="referral-link" id="referral-link">${refLink}</div>
-                        <button id="copy-ref-link-btn" class="bonus-btn" style="width: 100%; padding: 16px;">Copy Link</button>
-                    </div>
-                `;
-                
-                document.getElementById('copy-ref-link-btn')?.addEventListener('click', copyReferralLink);
-            };
+        const renderReferralSection = () => {
+            const container = document.getElementById('referral-section');
+            const refLink = `https://t.me/${appConfig.botUsername}/app?startapp=${tgUser.id}`;
+            container.innerHTML = `<div class="task-container" style="flex-direction: column; align-items: stretch;"><h3>Refer & Earn More!</h3><p>Invite friends and earn ${appConfig.referralBonus || 0} TK per referral.</p><input type="text" id="referral-link" value="${refLink}" readonly style="padding: 10px; text-align: center; border-radius: 8px; border: 1px dashed var(--primary-color); margin: 10px 0;"><button id="copy-ref-link-btn" class="action-btn">Copy Link</button></div>`;
+        };
 
-            const renderWithdrawSection = () => {
-                const container = document.getElementById('withdraw-section');
-                if (!container) return;
-                
-                let optionsHtml = '';
-                if (appConfig.withdrawMethods) { 
-                    appConfig.withdrawMethods.forEach(method => { 
-                        optionsHtml += `<option value="${method.name}">${method.name} (Min: ${method.min} TK)</option>`; 
-                    }); 
-                }
+        const renderWithdrawSection = () => {
+            const container = document.getElementById('withdraw-section'); let optionsHtml = '';
+            if (appConfig.withdrawMethods) { appConfig.withdrawMethods.forEach(method => { optionsHtml += `<option value="${method.name}">${method.name} (Min: ${method.min} TK)</option>`; }); }
+            
+            // *** NEW: Add notice about referral requirement ***
+            const minRefs = appConfig.minimumWithdrawReferrals || 0;
+            let referralNotice = '';
+            if (minRefs > 0) {
+                referralNotice = `<p style="font-size: 0.85rem; text-align: center; margin-bottom: 15px; opacity: 0.8;"><b>Note:</b> You need at least <b>${minRefs} referrals</b> to be eligible for withdrawal.</p>`;
+            }
 
-                const minRefs = appConfig.minimumWithdrawReferrals || 0;
-                let referralNotice = '';
-                if (minRefs > 0) {
-                    referralNotice = `
-                        <p style="font-size: 0.9rem; margin-bottom: 20px; padding: 12px; background: rgba(245, 158, 11, 0.1); border-radius: 20px; color: #F59E0B;">
-                            <i class="fas fa-info-circle" style="margin-right: 8px;"></i> Need at least ${minRefs} referrals to withdraw
-                        </p>
-                    `;
-                }
+            container.innerHTML = `<form id="withdraw-form" class="task-container" style="flex-direction: column; align-items: stretch;"><h3>Request Withdraw</h3>${referralNotice}<div class="form-group" style="width:100%"><label for="withdraw-method">Method:</label><select id="withdraw-method" required style="width: 100%; padding: 10px; border-radius: 8px;">${optionsHtml}</select></div><div class="form-group" style="width:100%"><label for="account-number">Account Number/ID:</label><input type="text" id="account-number" required style="width: 100%; padding: 10px; border-radius: 8px;"></div><div class="form-group" style="width:100%"><label for="amount">Amount:</label><input type="number" step="any" id="amount" required style="width: 100%; padding: 10px; border-radius: 8px;"></div><button type="submit" id="withdraw-submit-btn" class="action-btn">Submit Request</button></form>`;
+        };
 
-                container.innerHTML = `
-                    <form id="withdraw-form" class="glass-form">
-                        <h3 style="margin-bottom: 25px; text-align: center;">Withdraw Funds</h3>
-                        ${referralNotice}
-                        <select id="withdraw-method" class="form-input" required>
-                            ${optionsHtml}
-                        </select>
-                        <input type="text" id="account-number" class="form-input" placeholder="Account Number / Wallet ID" required>
-                        <input type="number" step="0.01" id="amount" class="form-input" placeholder="Amount (TK)" required>
-                        <button type="submit" id="withdraw-submit-btn" class="bonus-btn" style="width: 100%; padding: 16px;">Submit Request</button>
-                    </form>
-                `;
-                
-                document.getElementById('withdraw-form')?.addEventListener('submit', handleWithdraw);
-            };
-
-            const renderDynamicLinks = async () => {
-                const container = document.getElementById('dynamic-links-container'); 
-                if (!container) return;
-                
-                container.innerHTML = '';
-                
-                const result = await db.execute("SELECT * FROM links");
-                const links = result.data;
+        const renderDynamicLinks = () => {
+            const container = document.getElementById('dynamic-links-container'); container.innerHTML = '';
+            if (appConfig.links) {
+                const links = [];
+                for (const key in appConfig.links) { links.push({key, ...appConfig.links[key]}); }
                 links.reverse();
-                
                 links.forEach(link => {
-                    const el = document.createElement('div'); 
-                    el.className = 'link-card';
-                    el.innerHTML = `
-                        <div class="link-icon"><i class="fas fa-link"></i></div>
-                        <div style="flex: 1;">
-                            <h4 style="font-weight: 700;">${link.name}</h4>
-                        </div>
-                        <button class="bonus-btn" style="padding: 10px 20px;">Visit</button>
-                    `;
-                    
-                    const btn = el.querySelector('.bonus-btn');
-                    btn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        if (tg) tg.openLink(link.url);
-                    });
-                    
+                    const el = document.createElement('div'); el.className = 'task-container';
+                    el.innerHTML = `<img class="task-icon-img" src="${link.icon}" alt="icon"><div class="task-info"><h3>${link.name}</h3></div><button class="action-btn" onclick="window.Telegram.WebApp.openLink('${link.url}')">Visit</button>`;
                     container.appendChild(el);
                 });
-            };
+            }
+        };
 
-            initApp();
-        });
+        initApp();
+    });
     </script>
 </body>
 </html>
