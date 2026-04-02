@@ -1,5 +1,0 @@
-const DB_CONFIG = {
-    API_URL: 'https://tyno.top/api/user-db/execute',
-    API_KEY: '28|Qcg487k8aPk7RkRT5we4d82jVX67AZusfeeUYjGce0b22b56'
-};
-export default DB_CONFIG;
